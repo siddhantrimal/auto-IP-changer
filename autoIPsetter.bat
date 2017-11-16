@@ -1,5 +1,5 @@
 @echo off
-REM GHAR
+REM LABA
  CLS
  ECHO.
  ECHO =============================
@@ -10,6 +10,8 @@ set varIP=10.0.80.50
 REM WRITE YOUR COMPUTER IP ABOVE
 set varDefaultGateway=10.0.80.1
 set varSubnetMask=255.255.255.192
+set varPrimaryDNS=4.2.2.2
+set varSecondaryDNS=8.8.8.8
 REM --------------------------------
 :init
  setlocal DisableDelayedExpansion
@@ -50,13 +52,17 @@ REM --------------------------------
 REM LABA
 for /F "usebackq skip=1 tokens=2" %%a in ("%~F0") do set "BOOLEAN_VALUE=%%a" & goto continue
 :continue
+TITLE Automatically setting IP for %BOOLEAN_VALUE%
 ECHO BOOLEAN_VALUE=%BOOLEAN_VALUE%
 IF %BOOLEAN_VALUE% EQU GHAR GOTO 2
 :1
 netsh interface ip set address name="Ethernet" static %varIP% %varSubnetMask% %varDefaultGateway%
+netsh interface ip set dnsservers name="Ethernet" source=static address=%varPrimaryDNS% register=primary
+netsh interface ip add dns name="Ethernet" address=%varSecondaryDNS%
 GOTO UPDATE_BOOLEAN_VALUE
 :2
 netsh interface ipv4 set address name="Ethernet" source=dhcp
+netsh interface ip set dnsservers name="Ethernet" source=dhcp
 :UPDATE_BOOLEAN_VALUE
 REM The code to change the BOOLEAN_VALUE i.e. a toggler
 if %BOOLEAN_VALUE% equ GHAR (set "BOOLEAN_VALUE=LABA") else set "BOOLEAN_VALUE=GHAR"
@@ -75,5 +81,6 @@ REM :: Get here: https://github.com/siddhantrimal/auto-IP-changer
 REM :: built with Elevate.cmd - Version 4
 REM :: Automatically check & get admin rights
 REM :: referenced from: http://stackoverflow.com/a/12264592/5040900
-REM :: modified by Siddhant-Rimal 03-16-2017
+REM :: modified by Siddhant-Rimal 03-16-2017 v.1.0
+REM :: enhanced by Siddhant-Rimal 11-16-2017 v.1.1
 REM ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
