@@ -1,12 +1,18 @@
-# Auto IP Changer
-Simple script to invoke elevated automatic configuration of pre-defined IP settings, in command shell
+---
+date: 2017-11-23T20:10:46+01:00
+title: About
+weight: 30
+---
+
+Auto IP Changer is a simple script to invoke elevated automatic configuration of pre-defined IP settings, in command shell
+
 * Based on [Elevate - Version 4][1]
 * Built for cmd.exe (_not_ Powershell)
 
 More about older versions of this [here][2]
 
 ## Why was this necessary?
-Because (1) I'm a lazy fellow and (2) you should use automation whenever possible. Personally, I've bound this script to a hotkey `Ctrl+Shift+I` and enjoy a quick network configuration switch everytime I go from Lab-to-Home and vice-versa, so on and so forth.  
+Because (1) I'm a lazy fellow and (2) you should use automation whenever possible. Personally, I've bound this script to a hotkey `Ctrl+Shift+'` and enjoy a quick network configuration switch everytime I go from Lab-to-Home and vice-versa, so on and so forth.  
 
 ## Usage
 1. Download `autoIPsetter.bat`
@@ -35,4 +41,5 @@ Standard MIT License. See the [LICENSE file][100]
 [2]: http://cod3r.blogspot.com/2017/03/elevatedbatchprocessingoftogglecode.html
 
 [99]: https://github.com/siddhantrimal/auto-IP-changer/issues
-[100]: https://github.com/siddhantrimal/auto-IP-changer/blob/master/LICENSE
+[100]: /license
+

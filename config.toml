@@ -1,0 +1,68 @@
+baseurl = "https://example.org/"
+languageCode = "en-us"
+title = "auto IP changer"
+theme = "hugo-material-docs"
+metadataformat = "yaml"
+canonifyurls = true
+# Enable Google Analytics by entering your tracking id
+googleAnalytics = ""
+
+[params]
+	# General information
+	author = "siddhantrimal"
+	description = "A documentation for auto IP changer"
+	copyright = "Released under the MIT license"
+
+	# Repository
+	provider = "GitHub"
+	repo_url = "https://github.com/siddhantrimal/auto-IP-changer"
+
+	#version = "1.0.0"
+	logo = "images/logo.png"
+	favicon = ""
+
+	permalink = "#"
+
+	# Custom assets
+	custom_css = []
+	custom_js  = []
+
+	# Syntax highlighting theme
+	highlight_css  = ""
+
+	[params.palette]
+    	primary = "red"
+    	accent  = "teal"
+
+    [params.font]
+    	text = "Ubuntu"
+    	code = "Ubuntu Mono"
+
+
+[social]
+	twitter = ""
+	github  = "siddhantrimal"
+	email   = "siddhantrimal@hotmail.com"
+
+
+[[menu.main]]
+	name   = "Home"
+	url    = "/"
+	weight = 10
+
+[[menu.main]]
+	name   = "About"
+	url    = "about/"
+	weight = 20
+
+[[menu.main]]
+	name   = "License"
+	url    = "license/"
+	weight = 30
+
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true
